@@ -1,0 +1,32 @@
+<div class="container" *ngIf="isLoading">
+<div class="spinner-border" style="margin: auto"></div>
+</div>
+<div class="container" *ngIf="!isLoading">
+  <br>
+
+  <div id="accordion" *ngIf="Posts.length > 0">
+
+    <div class="card" *ngFor="let post of Posts">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapse_{{post.id}}">
+          {{ post.title}}
+
+        </a>
+      </div>
+      <div id="collapse_{{post.id}}" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          <img [src]="imgUrl + post.imageId " class="rounded" [alt]="post.title" style="height: 180px"><br>
+          {{post.content}}
+        </div>
+      </div>
+
+      <div class="card-footer text-right" *ngIf="isAuthenticated && userId == post.creator">
+        <a href="#" class="text-primary">EDIT</a> &nbsp;
+        <a href="#" class="text-danger" (click)="onDelete(post.id,post.imageId)">DELETE</a>
+      </div>
+    </div>
+  </div>
+
+ <p class="text-danger text-center" *ngIf="Posts.length <= 0">No posts added yet!</p>
+
+</div>

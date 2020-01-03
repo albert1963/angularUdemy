@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <a class="navbar-brand" routerLink="/">My messages</a>
+  <ul class="navbar-nav ml-auto">
+
+    <li class="nav-item" *ngIf="isAuthenticated">
+      <a class="nav-link"  routerLink="/create"  routerLinkActive="active">New Post</a>
+    </li>
+    <li class="nav-item" *ngIf="!isAuthenticated" >
+      <a class="nav-link"  routerLink="/login"  routerLinkActive="active">Login</a>
+    </li>
+    <li class="nav-item" *ngIf="!isAuthenticated" >
+      <a class="nav-link"  routerLink="/register"  routerLinkActive="active">Signup</a>
+    </li>
+
+    <li class="nav-item" *ngIf="isAuthenticated">
+      <a class="nav-link"  href="#" (click)="onLoggout()">Loggout</a>
+    </li>
+  </ul>
+</nav>
