@@ -1,0 +1,23 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "udemyAngular",
+    "password": "",
+    "name": "db",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  },
+  "imgupload": {
+    "name": "imgupload",
+    "provider": "filesystem",
+    "host": "localhost",
+    "port": 27017,
+    "database": "udemyAngular",
+    "username": "",
+    "password": "",
+    "connector": "loopback-component-storage-gridfs"
+  }
+}
